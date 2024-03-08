@@ -8,7 +8,10 @@ import java.util.Objects;
 //con le 5 diverse possibilità da selezionare per l'utente. Non nego che essendo stata questa la mia prima
 //settimana di Java ho provato a fare al meglio l'intera consegna, ma negli ultimi minuti a disposizione non ho
 //potuto eliminare tutti gli errori che mi venivano segnalati. Di questo mi scuso sentitamente, ma ho cercato di
-//fare del mio meglio nel tempo che avevo a disposizione.
+//fare del mio meglio nel tempo che avevo a disposizione. Ho avuto molteplici problemi con gli upload di github che hanno purtroppo
+// rallentato le ultime ore del mio lavoro (l'upload dei comment ha richiesto una quantità di tempo anomalo ed ho dovuto riavviare il computer più volte).
+//Chiedo ancora scusa, cercherò di vedere accuratamente i miei setting attuali di github, dato che in precedenza ero abituato agli upload
+//mediante visual studio code.
 public class Main {
     public static void main(String[] args) {
         System.out.println();
