@@ -4,5 +4,5 @@ public interface Volume {
     void volumeUp();
     void volumeDown();
     void play();
-    String volumeLevel();
+    String volumeIntensity();
 }

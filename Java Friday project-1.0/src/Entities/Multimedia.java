@@ -11,7 +11,6 @@ public abstract class Multimedia {
         this.format = format;
     }
 
-    // GETTERS & SETTERS
     public String getFileName() {
         return this.title + "." + this.format.toString().toLowerCase();
     }
