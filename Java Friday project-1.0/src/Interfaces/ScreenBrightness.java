@@ -5,5 +5,6 @@ package Interfaces;
 public interface ScreenBrightness {
     void screenBrightnessUp();
     void screenBrightnessDown();
+    int getBrightness();
     String screenBrightnessLevel();
 }

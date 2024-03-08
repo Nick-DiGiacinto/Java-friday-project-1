@@ -7,11 +7,13 @@ import java.util.Objects;
 // Ho provato a creare uno scanner il più efficiente possibile, cercando di rispettare la traccia
 //con le 5 diverse possibilità da selezionare per l'utente. Non nego che essendo stata questa la mia prima
 //settimana di Java ho provato a fare al meglio l'intera consegna, ma negli ultimi minuti a disposizione non ho
-//potuto eliminare tutti gli errori che mi venivano segnalati. Di questo mi scuso sentitamente, ma ho cercato di
+//potuto eliminare tutti gli errori che mi venivano segnalati (penso però che rimanga solo da gestire
+// soltanto l'errore inerente format). Di questo mi scuso sentitamente, ma ho cercato di
 //fare del mio meglio nel tempo che avevo a disposizione. Ho avuto molteplici problemi con gli upload di github che hanno purtroppo
-// rallentato le ultime ore del mio lavoro (l'upload dei comment ha richiesto una quantità di tempo anomalo ed ho dovuto riavviare il computer più volte).
-//Chiedo ancora scusa, cercherò di vedere accuratamente i miei setting attuali di github, dato che in precedenza ero abituato agli upload
-//mediante visual studio code.
+//// rallentato le ultime ore del mio lavoro (l'upload dei commit ha richiesto una quantità di tempo anomalo ed ho dovuto riavviare il computer più volte).
+////Chiedo ancora scusa, cercherò di vedere accuratamente i miei setting attuali di github, dato che in precedenza ero abituato agli upload
+////mediante visual studio code.
+
 public class Main {
     public static void main(String[] args) {
         System.out.println();
@@ -30,7 +32,7 @@ public class Main {
         System.out.println("Insert an audio...");
         Image image = createImage(sc);
 
-        MediaType[] media = {image, video1, video2, audio1, audio2,};
+        Multimedia[] media = {image, video1, video2, audio1, audio2};
         player(sc, media);
     }
 
@@ -99,7 +101,7 @@ public class Main {
 
     public static void manageBrightness(Scanner sc, Multimedia el) {
         System.out.println();
-        System.out.println("SET THE BRIGHTNESS OF " + el.getFileName());
+        System.out.println("Set the brightness of " + el.getFileName());
         System.out.println("Current brightness: " + ((ScreenBrightness) el).getBrightness()  + " (min: 1 - max: 10)");
         System.out.println("Instructions:");
         System.out.println("- Type \"up\" and press Enter to set up the brightness (+1)");
@@ -115,7 +117,7 @@ public class Main {
         }
     }
 
-    public static void imageHandler(Scanner sc, Multimedia el) {
+    public static void imageManager(Scanner sc, Multimedia el) {
         System.out.println();
         ((Image) el).show();
         System.out.println("Press Enter to exit");
@@ -138,7 +140,7 @@ public class Main {
                 if (arr[0] instanceof Volume) manageVolume(sc, arr[0]);
                 if (arr[0] instanceof ScreenBrightness) manageBrightness(sc, arr[0]);
                 if (arr[0] instanceof Volume) ((Volume) arr[0]).play();
-                if (arr[0] instanceof Image) imageHandler(sc, arr[0]);
+                if (arr[0] instanceof Image) imageManager(sc, arr[0]);
                 System.out.println();
                 player(sc, arr);
             }
@@ -146,7 +148,7 @@ public class Main {
                 if (arr[1] instanceof Volume) manageVolume(sc, arr[1]);
                 if (arr[1] instanceof ScreenBrightness) manageBrightness(sc, arr[1]);
                 if (arr[1] instanceof Volume) ((Volume) arr[1]).play();
-                if (arr[1] instanceof Image) imageHandler(sc, arr[1]);
+                if (arr[1] instanceof Image) imageManager(sc, arr[1]);
                 System.out.println();
                 player(sc, arr);
             }
@@ -154,7 +156,7 @@ public class Main {
                 if (arr[2] instanceof Volume) manageVolume(sc, arr[2]);
                 if (arr[2] instanceof ScreenBrightness) manageBrightness(sc, arr[2]);
                 if (arr[2] instanceof Volume) ((Volume) arr[2]).play();
-                if (arr[2] instanceof Image) imageHandler(sc, arr[2]);
+                if (arr[2] instanceof Image) imageManager(sc, arr[2]);
                 System.out.println();
                 player(sc, arr);
             }
@@ -162,7 +164,7 @@ public class Main {
                 if (arr[3] instanceof Volume) manageVolume(sc, arr[3]);
                 if (arr[3] instanceof ScreenBrightness) manageBrightness(sc, arr[3]);
                 if (arr[3] instanceof Volume) ((Volume) arr[3]).play();
-                if (arr[3] instanceof Image) imageHandler(sc, arr[3]);
+                if (arr[3] instanceof Image) imageManager(sc, arr[3]);
                 System.out.println();
                 player(sc, arr);
             }
@@ -170,12 +172,12 @@ public class Main {
                 if (arr[4] instanceof Volume) manageVolume(sc, arr[4]);
                 if (arr[4] instanceof ScreenBrightness) manageBrightness(sc, arr[4]);
                 if (arr[4] instanceof Volume) ((Volume) arr[4]).play();
-                if (arr[4] instanceof Image) imageHandler(sc, arr[4]);
+                if (arr[4] instanceof Image) imageManager(sc, arr[4]);
                 System.out.println();
                 player(sc, arr);
             }
             default -> {
-                System.out.println("Invalid input. Try again.");
+                System.out.println("Input not valid");
                 System.out.println();
                 player(sc, arr);
             }
